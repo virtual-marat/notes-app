@@ -2,7 +2,7 @@ import React from 'react';
 
 import './NoteEditor.less';
 
-const NotesEditor = React.createClass({
+const NoteEditor = React.createClass({
     getInitialState() {
         return {
             title : '',
@@ -43,10 +43,10 @@ const NotesEditor = React.createClass({
                     value={this.state.text}
                     onChange={this.handleTextChange}
                 />
-                <div className="NoteEdtor__footer">
+                <div className="NoteEditor__footer">
                     <button
                         className="NoteEditor__button"
-                        disabled={!this.state.next}
+                        disabled={!this.state.text}
                         onClick={this.handleNoteAdd}
                     >
                         Add
@@ -57,4 +57,4 @@ const NotesEditor = React.createClass({
     }
 });
 
-export default NotesEditor;
+export default NoteEditor;
