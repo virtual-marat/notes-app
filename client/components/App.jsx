@@ -1,13 +1,35 @@
 import React from 'react';
 
+import NotesActions from '../actions/NotesActions';
+import NotesStore from '../stores/NotesStore';
+
 import NoteEditor from './NoteEditor.jsx';
 import NotesGrid from './NotesGrid.jsx';
 
 import './App.less';
 
+function getStateFromFlux() {
+    return {
+        isLoading: NotesStore.isLoading(),
+        notes: NotesStore.getNotes()
+    };
+}
+
 const App = React.createClass({
+    getInitialState() {
+        return getStateFromFlux();
+    },
+    componentWillMount() {
+        NotesActions.loadNotes();
+    },
+    componentDidMount() {
+        NotesStore.addChangeListener(this._onChange);
+    },
+    componentWillUnmount() {
+        NotesStore.removeChangeListener((this._onChange));
+    },
     handleNoteAdd(data) {
-        console.log(data);
+        NotesActions.createNote(data);
     },
     render() {
         return (
@@ -17,6 +39,9 @@ const App = React.createClass({
                 <NotesGrid />
             </div>
         );
+    },
+    _onChange() {
+        this.setState(getStateFromFlux());
     }
 });
 
