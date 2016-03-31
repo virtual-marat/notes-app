@@ -5,8 +5,7 @@ module.exports = {
     output : {
         path       : __dirname + '/public/build/',
         publicPath : "build/",
-        filename   : "bundle.js",
-        headers: { "Access-Control-Allow-Origin": "*" }
+        filename   : "bundle.js"
     },
     module : {
         loaders : [
