@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
+
 import config from '../../etc/config.json';
+
 import '../models/Note';
 
 const Note = mongoose.model('Note');

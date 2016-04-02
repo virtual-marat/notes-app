@@ -6,14 +6,21 @@ import {serverPort} from '../etc/config.json'
 
 import * as db from './utils/DataBaseUtils.js';
 
+// Set up connection of database
 db.setUpConnection();
 
+// Initialization of express application
 const app = express();
 
+// Using bodyParser middleware
 app.use(bodyParser.json());
 
+// Allow requests from any origin
+// Fix the error "Access-Control-Allow-Origin"
 app.use(cors({origin : '*'}));
 
+
+// RESTful API handlers
 app.get('/notes', (req, res) => {
     db.listNotes().then(data => res.send(data));
 });
