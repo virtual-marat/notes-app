@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import './Note.less';
+import "./Note.less";
 
 const Note = React.createClass({
     render() {
         const style = {backgroundColor : this.props.color};
 
         return (
-            <div className='Note' style={style}>
-                <span className='Note__del-icon' onClick={this.props.onDelete}> x </span>
+            <div className="Note" style={style}>
+                <span className="Note__del-icon" onClick={this.props.onDelete}> x </span>
                 {
                     this.props.title
                         ?

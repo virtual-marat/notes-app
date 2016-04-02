@@ -1,10 +1,10 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
 
-import {serverPort} from '../etc/config.json'
+import {serverPort} from "../etc/config.json"
 
-import * as db from './utils/DataBaseUtils.js';
+import * as db from "./utils/DataBaseUtils.js";
 
 // Set up connection of database
 db.setUpConnection();
@@ -17,19 +17,19 @@ app.use(bodyParser.json());
 
 // Allow requests from any origin
 // Fix the error "Access-Control-Allow-Origin"
-app.use(cors({origin : '*'}));
+app.use(cors({origin : "*"}));
 
 
 // RESTful API handlers
-app.get('/notes', (req, res) => {
+app.get("/notes", (req, res) => {
     db.listNotes().then(data => res.send(data));
 });
 
-app.post('/notes', (req, res) => {
+app.post("/notes", (req, res) => {
     db.createNote(req.body).then(data => res.send(data));
 });
 
-app.delete('/notes/:id', (req, res) => {
+app.delete("/notes/:id", (req, res) => {
     db.deleteNote(req.params.id).then(data => res.send(data));
 });
 

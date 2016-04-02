@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import ColorPicker from './ColorPicker.jsx';
+import ColorPicker from "./ColorPicker.jsx";
 
-import './NoteEditor.less';
+import "./NoteEditor.less";
 
 const NoteEditor = React.createClass({
     getInitialState() {
         return {
-            title : '',
-            text  : '',
-            color : '#ffffff'
+            title : "",
+            text  : "",
+            color : "#ffffff"
         };
     },
     handleTextChange(event) {
@@ -29,22 +29,22 @@ const NoteEditor = React.createClass({
         };
 
         this.props.onNoteAdd(newNote);
-        this.setState({text : '', title : '', color : '#ffffff'});
+        this.setState({text : "", title : "", color : "#FFFFFF"});
     },
     render() {
         return (
             <div className="NoteEditor">
                 <input
                     type="text"
-                    className='NoteEditor__title'
-                    placeholder='Enter title'
+                    className="NoteEditor__title"
+                    placeholder="Enter title"
                     value={this.state.title}
                     onChange={this.handleTitleChange}
                 />
                 <textarea
-                    placeholder='Enter note text'
+                    placeholder="Enter note text"
                     rows={5}
-                    className='NoteEditor__text'
+                    className="NoteEditor__text"
                     value={this.state.text}
                     onChange={this.handleTextChange}
                 />

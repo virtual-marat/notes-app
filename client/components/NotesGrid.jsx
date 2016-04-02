@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import Note from './Note.jsx';
-import Masonry from 'react-masonry-component';
+import Note from "./Note.jsx";
+import Masonry from "react-masonry-component";
 
-import './NotesGrid.less';
+import "./NotesGrid.less";
 
 const NotesGrid = React.createClass({
     render() {
         const masonryOptions = {
-                itemSelector: '.Note',
+                itemSelector: ".Note",
                 columnWidth: 250,
                 gutter: 10,
                 isFitWidth: true
@@ -16,7 +16,7 @@ const NotesGrid = React.createClass({
 
         return (
             <Masonry
-                className='NotesGrid'
+                className="NotesGrid"
                 options={masonryOptions}
             >
                 {

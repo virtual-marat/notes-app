@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import NotesActions from '../actions/NotesActions';
-import NotesStore from '../stores/NotesStore';
+import NotesActions from "../actions/NotesActions";
+import NotesStore from "../stores/NotesStore";
 
-import NoteEditor from './NoteEditor.jsx';
-import NotesGrid from './NotesGrid.jsx';
+import NoteEditor from "./NoteEditor.jsx";
+import NotesGrid from "./NotesGrid.jsx";
 
-import './App.less';
+import "./App.less";
 
 function getStateFromFlux() {
     return {
-        isLoading: NotesStore.isLoading(),
-        notes: NotesStore.getNotes()
+        isLoading : NotesStore.isLoading(),
+        notes     : NotesStore.getNotes()
     };
 }
 

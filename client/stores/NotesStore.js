@@ -1,9 +1,9 @@
-import {EventEmitter} from 'events';
+import {EventEmitter} from "events";
 
-import AppDispatcher from '../dispatcher/AppDispatcher';
-import AppConstants from '../constants/AppConstants';
+import AppDispatcher from "../dispatcher/AppDispatcher";
+import AppConstants from "../constants/AppConstants";
 
-const CHANGE_EVENT = 'change';
+const CHANGE_EVENT = "change";
 
 let _notes = [];
 let _loadingError = null;
@@ -14,7 +14,7 @@ function formatNote(note) {
         id        : note._id,
         title     : note.title,
         text      : note.text,
-        color     : note.color || '#ffffff',
+        color     : note.color || "#ffffff",
         createdAt : note.createdAt
     };
 }
@@ -71,7 +71,7 @@ AppDispatcher.register(function (action) {
 
         default:
         {
-            console.log('No such handler');
+            console.log("No such handler");
         }
     }
 });

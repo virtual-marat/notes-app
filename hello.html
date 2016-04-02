@@ -14,7 +14,7 @@
         const HelloWorld = React.createClass({
             getInitialState() {
                 return {
-                    name : 'Vasya'
+                    name : "Vasya"
                 };
             },
             handleNameChange(e) {
@@ -26,15 +26,15 @@
                 return (
                     <div>
                         <h1>Hello {this.props.name} and {this.state.name}!</h1>
-                        <input type='text' value={this.state.name} onChange={this.handleNameChange} />
+                        <input type="text" value={this.state.name} onChange={this.handleNameChange} />
                     </div>
                 );
             }
         });
 
         ReactDOM.render(
-                <HelloWorld name='Marat' />,
-                document.getElementById('content')
+                <HelloWorld name="Marat" />,
+                document.getElementById("content")
         );
     </script>
 </body>
